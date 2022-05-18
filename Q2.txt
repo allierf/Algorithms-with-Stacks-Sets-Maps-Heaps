@@ -1,0 +1,18 @@
+Q2.A
+Input: Temperatures = [81,72,75,73,81,85]
+Outout: [5,1,2,1,1,0]
+
+Q2.B
+A striaghtforward solution that runs O(N^2) would be to compare each element to all other elements in the vector. The solution would need an outer for loop to keep track of the current day that needs to find when the next warmer day is. Than an inner for loop is needed to iterate through the rest of the days in the vector and compare the temperatures to the current day determined by the outer loop. If the day is warmer than the outer loop iterator is subtracted from the inner loop iterator to find the number of days to the ith warmer day. 
+
+Q2.C
+Using the monotonic stack appoach talked about in class, I intialized a stack to keep track of the temperatures. With every iteration through the temeratures vector, the temperature[i] value is compared to the top of the stack to see if temperature[i] is greater than the the top value of the stack. If the previous statement is true then the top value of the stack is popped off and the iterator for the vector is subtacted by the iterator for the top of the stacks value. If temperature[i] is less than the top of the the stack then temperature[i] is pushed onto the stack. Every day will be added to the stack at least once until all of the number of days to the next warmer day is calculated.
+
+Q2.D
+To see how many days until the next colder temerature, I would flip  the greater than sign, >, to a less than sign, <, so the while loop would look like
+while(!mono.empty()&&temperatures[i]<temperatures[mono.top()]).
+
+Q2.E
+Given an input of temeratures that are always decreasing then the largest amount of times push would be called is n times where n is the number of days being evaluated. pop will never be called.
+Given an input of temperatures that is always increasing then pop will be called n times and push will be called n times. 
+In the worst case the algorithm runs O(n^2) when the vector is decreasing and the last element is greater than all the procceeding elements. The while loop would go through the stack twice to add all the temperatures then another time to pop all of the temperatures. 

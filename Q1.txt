@@ -1,0 +1,8 @@
+Q1.A
+In the PermissionChecker constructer I would sort the vector so that the ID's are in increasing order. Then in hasPermission I would implement binary search to check for an ID. The hasPermission would run O(logn) times where n is the size of passlistUsers.
+
+Q1.B
+In the PermissionChecker I would add all the ID's to a hashset. The hashset would be space complexity O(n). In the hasPermission I would check is the hashset contains the ID and return true or false. This check would be O(1) time complexity. 
+
+
+

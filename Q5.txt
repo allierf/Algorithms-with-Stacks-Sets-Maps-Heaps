@@ -1,0 +1,6 @@
+q5.A
+A straightforward approach is if there are m amount of sorted vectors and n is the number of elements in each vector then combine all m vectors into one large vector and sort the n elements. This appoach would take O(n*mlog(n*m)) because there are m vectors with n elements and it takes nlog(n) to sort the created vector. The space complexity is O(n*m) because a vector is created with the size of n*m elements.
+
+Q5.C
+The time complexity for the proposed solution is O(n*mlog(m)) where m is the number of vectors and n is the number of elements in each vector. The solution has to trasverse m lists with n elements which takes n*m. Then when the minumum number is found in the prioirty queue it takes log(m) times because a single element is added from each m vectors so there are at most m elements in the queue.
+
